@@ -1,5 +1,10 @@
 const app = Vue.createApp({
   data: () => ({
-    message: 'Hello Vue.js!'
-  })
+
+  }),
+  methods: {
+    addItem: function(event) {
+    console.log('Clicked!')
+    }
+  }
 }).mount('#app')
