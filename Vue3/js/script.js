@@ -12,6 +12,8 @@ const app = Vue.createApp({
       item: this.newItem
     }
     this.todos.push(todo)
+    // Addボタンクリック時、入力欄をリセットする
+    this.newItem = ''
     }
   }
 }).mount('#app')
