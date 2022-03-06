@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3.2.4"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p><input type="text" v-model="message"></p>
+    <p><input type="text" v-model="message"></p>
+    <!-- dataオブジェクト確認：簡易的なデバッグ -->
+    <pre>{{ $data }}</pre>
+  </div>
+</body>
+
+<!-- Vue.jsの記述 -->
+<script type="module">
+  import { createApp } from "https://unpkg.com/vue@3.2.4/dist/vue.esm-browser.prod.js"; 
+  const app = Vue.createApp({
+    data: () => ({
+      message: 'Hello Vue.js!'
+    })
+  }).mount('#app')
+</script>
+
+</html>
