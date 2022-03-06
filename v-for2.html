@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3.2.4"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <!-- 注意点：第１引数と第２引数が逆 -->
+      <li v-for="(value, key) in user">{{ key }}: {{ value }}</li>
+    </ul>
+  </div>
+</body>
+
+<!-- Vue.jsの記述 -->
+<script type="module">
+  import { createApp } from "https://unpkg.com/vue@3.2.4/dist/vue.esm-browser.prod.js"; 
+  // 配列を記入
+  const app = Vue.createApp({
+    data: () => ({
+      user: {
+        firstName: 'Taro',
+        lastName: 'Yamada',
+        age: 23
+      }
+    })
+  }).mount('#app')
+</script>
+
+</html>
