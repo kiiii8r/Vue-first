@@ -3,6 +3,7 @@ const app = Vue.createApp({
 
   }),
   methods: {
+    // クリック時のイベントを設定
     addItem: function(event) {
     console.log('Clicked!')
     }
