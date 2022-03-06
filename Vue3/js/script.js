@@ -1,6 +1,6 @@
 const app = Vue.createApp({
   data: () => ({
-
+    newItem: ''
   }),
   methods: {
     // クリック時のイベントを設定
