@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3.2.4"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- ボタンをクリックしたら"onClick"メソッドを発火 -->
+    <button v-on:click="onClick">Click!</button>
+    <!-- クリック後現在時刻表示 -->
+    <p>{{ now }}</p>
+  </div>
+</body>
+
+<!-- Vue.jsの記述 -->
+<script type="module">
+  import { createApp } from "https://unpkg.com/vue@3.2.4/dist/vue.esm-browser.prod.js"; 
+  // 配列を記入
+  const app = Vue.createApp({
+    data: () => ({
+      // 初期表示
+      now: '-'
+    }),
+    // methodsを追加
+    methods: {
+      onClick: function() { 
+        // console.log('onClick!') 発火確認
+
+        // グローバル変数でnowを呼び出し、日付を代入
+        // Date.toLocaleString() はロケールに応じた形式で変換?
+        this.now = new Date().toLocaleString()
+      }
+    }
+  }).mount('#app')
+</script>
+
+</html>
